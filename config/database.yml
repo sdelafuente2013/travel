@@ -81,9 +81,8 @@ test:
 #
 production:
   <<: *default
-  encoding: utf8
-  database: <%=['RDS_DB_NAME']%>
-  username: <%=['RDS_DB_USERNAME']%>
-  password: <%=['RDS_DB_PASSWORD']%>
-  host: <%=['RDS_DB_HOSTNAME']%>
-  port: <%=['RDS_DB_PORT']%>
+  database: <%=['RDS_DATABASE']%>
+  username: <%=['RDS_USERNAME']%>
+  password: <%=['RDS_PASSWORD']%>
+  host: <%=['RDS_HOST']%>
+  port: 5432
