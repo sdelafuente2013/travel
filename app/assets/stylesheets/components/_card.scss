@@ -1,24 +1,18 @@
-.cards{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-    grid-gap: 16px;
-    flex-grow: 1;
-    background-color: white;
-  }
-  .card-cointainer{
-    display: flex;
-  }
-  
+.card-cointainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-  @media (max-width: 720px) {
-    /* For a screen < 720px, this CSS will be read */
-    .cards{
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (max-width: 540px) {
-    /* For a screen < 540px, this CSS will be read */
-    .cards {
-      grid-template-columns: 1fr;
-    }
-  }
+.card-cointainer > div{
+  width: 25em;
+  height: 13em;
+  margin: 0.5em;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5em;
+}
