@@ -80,7 +80,8 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: travel_production
-  username: travel
-  password: <%= ENV["TRAVEL_DATABASE_PASSWORD"] %>
+#  <<: *default
+#  database: travel_production
+#  username: travel
+#  password: <%#= ENV["TRAVEL_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
