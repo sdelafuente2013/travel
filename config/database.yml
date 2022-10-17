@@ -80,8 +80,16 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  <<: *default
+  encoding: utf8
+  database: <%=[RDS_DB_NAME]%>
+  username: <%=[RDS_DB_USERNAME]%>
+  password: <%=[RDS_DB_PASSWORD]%>
+  host: <%=[RDS_DB_HOSTNAME]%>
+  port: <%=[RDS_DB_PORT]%>
+
 #  <<: *default
 #  database: travel_production
 #  username: travel
 #  password: <%#= ENV["TRAVEL_DATABASE_PASSWORD"] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  #  url: <%#= ENV['DATABASE_URL'] %>
