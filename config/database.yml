@@ -81,8 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: <%=['RDS_DATABASE']%>
-  username: <%=['RDS_USERNAME']%>
-  password: <%=['RDS_PASSWORD']%>
-  host: <%=['RDS_HOST']%>
-  port: 5432
+  database: travel_production
+  username: postgres
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
