@@ -1,14 +1,12 @@
 .navbar {
-  margin-top: -8px;
-}
-
-.navbar > * {
   background-color: #F5C245;
-  height: 40px
-}
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  .navbar-brand{
+    font-weight: bold;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
