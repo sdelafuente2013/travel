@@ -1,0 +1,19 @@
+.footer-icons{
+  //border: red solid 1px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  a{
+    color: white;
+    i{
+      font-size: 1.7em;
+    }
+  }
+
+}
+
+.d-flex{
+  padding: 20px !important;
+  height: 60px;
+}
