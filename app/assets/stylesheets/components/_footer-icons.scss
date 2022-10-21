@@ -1,19 +1,24 @@
-.footer-icons{
-  //border: red solid 1px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+.navegacion-user {
+  background-color: white;
+  border-top: 0.5px solid #BBBBBB;
+  height: 40px;
+  padding: 10px 2.5em 2px 2.5em !important;
 
-  a{
-    color: white;
-    i{
-      font-size: 1.7em;
+  .footer-icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    a {
+      color: #BBBBBB;
+
+      i {
+        font-size: 1.4em;
+      }
+    }
+
+    a:hover {
+      color: #F5C245;
     }
   }
-
-}
-
-.d-flex{
-  padding: 20px !important;
-  height: 60px;
 }
