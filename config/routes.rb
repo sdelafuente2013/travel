@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'users#index'
+  get 'guides/info'
+  get 'guides/form'
+  get '/', to: 'users#index', as: 'user_root'
 end
