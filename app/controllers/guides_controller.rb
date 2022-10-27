@@ -1,9 +1,9 @@
 class GuidesController < ApplicationController
   def info
-    GuideMailer.formulario.deliver_now
+    # Implement
   end
 
   def form
-    #  Implement
+    GuideMailer.formulario.deliver_now
   end
 end
