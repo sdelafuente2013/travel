@@ -7,3 +7,23 @@
     border-color: #EBA561;
   }
 }
+.btn-acceder{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.btn-info{
+  background-color: transparent;
+  color: #FF8811;
+  border-color:#FF8811;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  width: 33%;
+  &:hover{
+    background-color: #f0861b ;
+    border-color: #F4D06F;
+    color: white;
+  }
+}
