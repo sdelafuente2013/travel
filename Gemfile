@@ -53,7 +53,7 @@ gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails', '~> 6.0.0'
+
 end
 
 group :development do
@@ -67,6 +67,8 @@ group :development do
   # gem "spring"
 end
 
+gem "high_voltage"
+
 group :production do
   gem 'pg', '~> 1.1'
 end
@@ -76,4 +78,10 @@ group :rubocop do
   gem 'rubocop-packaging', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.0.0'
 end
