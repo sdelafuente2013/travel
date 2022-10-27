@@ -1,0 +1,15 @@
+.envio-mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  height: 100vh;
+
+
+  .recuadro {
+    border: double 2px gray;
+    width: 50%;
+    padding: 1em;
+  }
+
+}
