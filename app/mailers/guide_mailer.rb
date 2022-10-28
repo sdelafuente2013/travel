@@ -32,7 +32,7 @@ class GuideMailer < ApplicationMailer
     @about = object.about
     @owner = 'Nuria'
 
-    mail to: 'santiago.delafuente@bue.edu.ar',
+    mail to: 'nuriagutierrezrioperez@gmail.com',
          subject: 'Formulario de contacto - guía interesado',
          template_path: 'guide_mailer',
          template_name: 'send_mail_digital_tour'
@@ -44,7 +44,7 @@ class GuideMailer < ApplicationMailer
     @about = object.about
     @owner = 'Elena'
 
-    mail to: '',
+    mail to: 'elenagutierrezrioperez@gmail.com',
          subject: 'Formulario de contacto - guía interesado',
          template_path: 'guide_mailer',
          template_name: 'send_mail_digital_tour'
