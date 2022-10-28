@@ -1,37 +1,43 @@
 <%= render 'nabvar' %>
-  <section class="banner">
-      <img class="banner__img" src="https://images.pexels.com/photos/4337408/pexels-photo-4337408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img_guia">
-      <div class="banner__info">
-          <h2 class="banner__title">Se parte de una aventura</h2>
-          <p class="banner__p">aqui encontraras informacion sobre los beneficios de ser guia con Digital Tours</p>
-          <div class="btn-acceder">
-            <%= link_to 'Registrarme', guides_form_path, class: "btn btn-info" %>
-          </div>
+<section class="banner">
+  <img class="banner__img" src="https://images.pexels.com/photos/4337408/pexels-photo-4337408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img_guia">
+  <div class="banner__info">
+    <h2 class="banner__title">Se parte de una aventura</h2>
+    <p class="banner__p">aqui encontraras informacion sobre los beneficios de ser guia con Digital Tours</p>
+    <div class="btn-acceder">
+      <%= link_to 'Registrarme', guides_form_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</section>
+
+<section class="info-guia">
+  <div class="container">
+    <div class="title">
+      <h2>¿Por qué ser guia?</h2>
+    </div>
+
+    <div class="info">
+      <div class="g-col-6">
+        <img class="img_info" src="https://images.pexels.com/photos/11753771/pexels-photo-11753771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="VENECIA">
       </div>
-  </section>
-  <section class="info-guia">
-    <div class="container">
-          <div class="title">
-            <h2>¿Por què ser guia?<h2>
-          </div>
+      <div class="beneficios">
+        <h3 class="title-beneficios">Beneficios</h3>
+        <p> Aliqua ex consequat reprehenderit aliquip sint commodo id voluptate Lorem nisi enim cillum cillum esse.
+          Aliquip et cupidatat exercitation exercitation cillum. Lorem magna irure nostrud dolor labore cillum dolore
+          minim esse do exercitation sint. Exercitation incididunt nulla tempor cillum sit Lorem nisi ipsum adipisicing
+          esse laborum laborum mollit. </p>
+        <h3 class="title-beneficios">lorem impums</h3>
+        <p>nsectetur veniam veniam enim dolor qui minim tempo exercitation aliqui Lorem sit.</p>
+        <h3 class="title-beneficios">lorem impums</h3>
+        <p> magna magna. Incididunt laboris sint dolore minim non. Esse sint labore aute magna. Ad tempor voluptate sunt
+          anim eiusmod in cupidatat do ad. Duis pariatur velit laboris voluptate deserunt ullamco fugiat dolore
+          adipisicing do et voluptate amet. Voluptate aute mollit est fugiat qui aliquip labore ut.</p>
+      </div>
+    </div>
 
-          <div class="info">
-            <div class="g-col-6">
-              <img class="img_info" src="https://images.pexels.com/photos/11753771/pexels-photo-11753771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="VENECIA">
-            </div>
-            <div class="beneficios">
-              <h3 class="title-beneficios">Beneficios</h3>
-              <p> Aliqua ex consequat reprehenderit aliquip sint commodo id voluptate Lorem nisi enim cillum cillum esse. Aliquip et cupidatat exercitation exercitation cillum. Lorem magna irure nostrud dolor labore cillum dolore minim esse do exercitation sint. Exercitation incididunt nulla tempor cillum sit Lorem nisi ipsum adipisicing esse laborum laborum mollit. </p>
-              <h3 class="title-beneficios">lorem impums</h3>
-              <p>nsectetur veniam veniam enim dolor qui minim tempo exercitation aliqui Lorem sit.</p>
-              <h3 class="title-beneficios">lorem impums</h3>
-              <p>  magna magna. Incididunt laboris sint dolore minim non. Esse sint labore aute magna. Ad tempor voluptate sunt anim eiusmod in cupidatat do ad. Duis pariatur velit laboris voluptate deserunt ullamco fugiat dolore adipisicing do et voluptate amet. Voluptate aute mollit est fugiat qui aliquip labore ut.</p>
-            </div>
-          </div>
 
-    
-          <div class="btn-acceder">
-                  <%= link_to 'Registrarme', guides_form_path, class: "btn btn-info" %>
-          </div>
-    <div>
-  </section>
+    <div class="btn-acceder">
+      <%= link_to 'Registrarme', guides_form_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</section>

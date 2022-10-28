@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-
   describe 'HTTP response status codes' do
     context 'when accessing "/"' do
       before { get :index }
@@ -30,5 +31,3 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 end
-
-
