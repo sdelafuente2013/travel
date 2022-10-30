@@ -6,7 +6,7 @@ class FormsFutureGuideMailer < ApplicationMailer
     @name = object.name
     @email = object.email
 
-    mail to: @email, subject: "¡#{@name} Pronto revisaremos tu solicitud!"
+    mail to: @email, subject: "¡#{@name.split.first.capitalize} Pronto revisaremos tu solicitud!"
   end
 
   def send_mail_santiago(object)
