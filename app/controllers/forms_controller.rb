@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class FormsController < ApplicationController
-  def info_previous
-    # Implement
-  end
-
   def create_form
     @formulario = Contact.new
   end
@@ -16,7 +12,7 @@ class FormsController < ApplicationController
     # FormsFutureGuideMailer.send_mail_nuria(@formulario).deliver_now
     # FormsFutureGuideMailer.send_mail_elena(@formulario).deliver_now
 
-    redirect_to user_root_path
+    redirect_to page_path('home')
   end
 
   private
