@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # devise_for :members
-
   get 'form/create', to: 'forms#create_form'
   post 'form/create', to: 'forms#send_mails'
 
