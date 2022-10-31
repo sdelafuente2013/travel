@@ -276,7 +276,7 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2, >= 5.2.2)
   debug
-  devise (~> 4.8, >= 4.8.1)
+  devise
   high_voltage
   importmap-rails
   jbuilder

@@ -70,7 +70,7 @@ gem 'high_voltage'
 
 group :production do
   gem 'pg', '~> 1.1'
-  gem 'devise', '~> 4.8', '>= 4.8.1'
+  gem 'devise'
 end
 
 group :rubocop do
