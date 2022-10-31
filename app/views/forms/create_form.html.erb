@@ -1,0 +1,14 @@
+<%= render 'nabvar' %>
+
+<div class="container">
+  <div class="registration-form">
+    <%= form_with model: @formulario, url: form_create_path do |form| %>
+      <div class="form-icon"> <span> <i class="fa-solid fa-user"></i> </span> </div>
+      <%= form.text_field :name, class: "form-control item", placeholder: "Nombre completo" %>
+      <%= form.text_field :email, class: "form-control item",  placeholder: "Su email" %>
+      <%= form.password_field :password, class: "form-control item",  placeholder: "Contraseña" %>
+      <%= form.password_field :password_confirm, class: "form-control item",  placeholder: "Confirma tu contraseña" %>
+      <%= form.button "Enviar solicitud", class: "btn btn-block create-account" %>
+    <% end %>
+  </div>
+</div>
