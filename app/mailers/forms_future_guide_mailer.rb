@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
 class FormsFutureGuideMailer < ApplicationMailer
-  MESSAGE_GUIDE_INTERESTED = 'Formulario de contacto - guía interesado'
+  MESSAGE_GUIDE_INTERESTED = 'Formulario de contacto - Nuevo guía interesado'
   def send_mail_future_guide(object)
-    @name = object.name
+    @first_name = object.name.split.first.capitalize
     @email = object.email
 
-    mail to: @email, subject: "¡#{@name.split.first.capitalize} Pronto revisaremos tu solicitud!"
+    mail to: @email, subject: "¡#{@first_name} Pronto revisaremos tu solicitud!"
   end
 
   def send_mail_santiago(object)
-    @name = object.name
+    @full_name = object.name
+    @first_name = object.name.split.first.capitalize
     @email = object.email
     @owner = 'Santiago'
 
@@ -20,7 +21,8 @@ class FormsFutureGuideMailer < ApplicationMailer
          template_name: 'send_mail_owner'
   end
   def send_mail_nuria(object)
-    @name = object.name
+    @full_name = object.name
+    @first_name = object.name.split.first.capitalize
     @email = object.email
     @owner = 'Nuria'
 
@@ -30,7 +32,8 @@ class FormsFutureGuideMailer < ApplicationMailer
          template_name: 'send_mail_owner'
   end
   def send_mail_elena(object)
-    @name = object.name
+    @full_name = object.name
+    @first_name = object.name.split.first.capitalize
     @email = object.email
     @owner = 'Elena'
 
