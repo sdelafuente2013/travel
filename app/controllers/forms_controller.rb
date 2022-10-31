@@ -3,6 +3,9 @@
 class FormsController < ApplicationController
   def create_form
     @formulario = Contact.new
+    # p 'resultado', user_devise_signed_in?
+    # p 'resultado', current_user_devise
+    # p 'resultado', user_devise_session
   end
 
   def send_mails

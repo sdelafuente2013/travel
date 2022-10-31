@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class OwnersController < ApplicationController
   before_action :authenticate_member!
+
   def dashboard
     # Implement
   end
