@@ -14,8 +14,8 @@ class GuidesController < ApplicationController
     @formulario = Contact.create!(formulario_params)
     GuideMailer.send_mail_future_guide(@formulario).deliver_now
     GuideMailer.send_mail_santiago(@formulario).deliver_now
-    GuideMailer.send_mail_nuria(@formulario).deliver_now
-    GuideMailer.send_mail_elena(@formulario).deliver_now
+    # GuideMailer.send_mail_nuria(@formulario).deliver_now
+    # GuideMailer.send_mail_elena(@formulario).deliver_now
 
     redirect_to user_root_path
   end
