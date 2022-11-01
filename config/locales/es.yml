@@ -1,0 +1,29 @@
+es:
+  activerecord:
+    models:
+      contact:
+        one: 'Usuario'
+        other: 'Usuarios'
+    attributes:
+      contact:
+        name: 'Nombre'
+        password: 'Contraseña'
+        password_confirmation: 'Contraseña'
+        email: 'Correo electrónico'
+    errors:
+      models:
+        contact:
+          attributes:
+            name:
+              blank: 'es un campo requerido'
+            email:
+              blank: 'es un campo requerido'
+              taken: 'este correo ya esta registrado'
+              invalid: 'invalido'
+            password:
+              blank: 'es un campo requerido'
+              too_short: 'debe tener como minimo 6 caracteres'
+            password_confirmation:
+              blank: 'es un campo requerido'
+              too_short: 'debe tener como minimo 6 caracteres'
+              confirmation: 'deben ser iguales'

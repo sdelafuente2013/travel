@@ -1,14 +1,57 @@
 <%= render 'nabvar' %>
 
-<div class="container">
+<% if @enviado %>
+  <div class="alert alert-success" role="alert">
+    ¡Se ha enviado con éxito el formulario!
+  </div>
+<% else %>
+  <div class="container">
   <div class="registration-form">
     <%= form_with model: @formulario, url: form_create_path do |form| %>
       <div class="form-icon"> <span> <i class="fa-solid fa-user"></i> </span> </div>
-      <%= form.text_field :name, class: "form-control item", placeholder: "Nombre completo" %>
-      <%= form.email_field :email, class: "form-control item",  placeholder: "Su email" %>
-      <%= form.password_field :password, name: 'password', class: "form-control item",  placeholder: "Contraseña" %>
-      <%= form.password_field :password_confirm, name: 'password_confirmation', class: "form-control item",  placeholder: "Confirma tu contraseña" %>
+
+      <% invalid = @formulario.errors.include?(:name) %>
+      <% if invalid %>
+        <div class="invalid-feedback d-block">
+          <% @formulario.errors.full_messages_for(:name).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+        </div>
+      <% end %>
+      <%= form.text_field :name, class: "form-control item #{'is-invalid' if invalid}", placeholder: "Nombre completo" %>
+
+      <% invalid = @formulario.errors.include?(:email) %>
+      <% if invalid %>
+        <div class="invalid-feedback d-block">
+          <% @formulario.errors.full_messages_for(:email).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+        </div>
+      <% end %>
+      <%= form.email_field :email, class: "form-control item #{'is-invalid' if invalid}",  placeholder: "Su email" %>
+
+      <% invalid = @formulario.errors.include?(:password) %>
+      <% if invalid %>
+        <div class="invalid-feedback d-block">
+          <% @formulario.errors.full_messages_for(:password).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+        </div>
+      <% end %>
+      <%= form.password_field :password, class: "form-control item #{'is-invalid' if invalid}",  placeholder: "Contraseña" %>
+
+      <% invalid = @formulario.errors.include?(:password_confirmation) %>
+      <% if invalid %>
+        <div class="invalid-feedback d-block">
+          <% @formulario.errors.full_messages_for(:password_confirmation).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+        </div>
+      <% end %>
+      <%= form.password_field :password_confirmation, class: "form-control item #{'is-invalid' if invalid}",  placeholder: "Confirma tu contraseña" %>
+
       <%= form.button "Enviar solicitud", class: "btn btn-block create-account" %>
     <% end %>
   </div>
 </div>
+<% end %>

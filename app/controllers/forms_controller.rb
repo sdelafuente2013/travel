@@ -3,19 +3,24 @@
 class FormsController < ApplicationController
   def create_form
     @formulario = Contact.new
-    # p 'resultado', user_devise_signed_in?
-    # p 'resultado', current_user_devise
-    # p 'resultado', user_devise_session
   end
 
   def send_mails
-    @formulario = Contact.create!(formulario_params)
-    FormsFutureGuideMailer.send_mail_future_guide(@formulario).deliver_now
-    FormsFutureGuideMailer.send_mail_santiago(@formulario).deliver_now
+    @formulario = Contact.new(formulario_params)
+
+    respond_to do |format|
+      if @formulario.save
+        format.html { render :create_form, status: :created }
+        @enviado = true
+      else
+        format.html { render :create_form, status: :unprocessable_entity }
+      end
+    end
+
+    # FormsFutureGuideMailer.send_mail_future_guide(@formulario).deliver_now
+    # FormsFutureGuideMailer.send_mail_santiago(@formulario).deliver_now
     # FormsFutureGuideMailer.send_mail_nuria(@formulario).deliver_now
     # FormsFutureGuideMailer.send_mail_elena(@formulario).deliver_now
-
-    redirect_to page_path('home')
   end
 
   private

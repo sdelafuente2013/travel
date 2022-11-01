@@ -26,7 +26,8 @@ module Travel
     config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
-    #
+    I18n.available_locales = [:en, :es]
+    config.i18n.default_locale = :es
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
