@@ -18,7 +18,12 @@
           <% end %>
         </div>
       <% end %>
-      <%= form.text_field :name, class: "form-control item #{'is-invalid' if invalid}", placeholder: "Nombre completo" %>
+      <%= form.text_field :name,
+                          class: "form-control item #{'is-invalid' if invalid}",
+                          placeholder: "Nombre completo",
+                          'data-controller': "form",
+                          'data-action': "input->form#name"
+      %>
 
       <% invalid = @formulario.errors.include?(:email) %>
       <% if invalid %>
@@ -28,7 +33,12 @@
           <% end %>
         </div>
       <% end %>
-      <%= form.email_field :email, class: "form-control item #{'is-invalid' if invalid}",  placeholder: "Su email" %>
+      <%= form.email_field :email,
+                           class: "form-control item #{'is-invalid' if invalid}",
+                           placeholder: "Su email",
+                           'data-controller': "form",
+                           'data-action': "input->form#email"
+      %>
 
       <% invalid = @formulario.errors.include?(:password) %>
       <% if invalid %>
@@ -38,7 +48,12 @@
           <% end %>
         </div>
       <% end %>
-      <%= form.password_field :password, class: "form-control item #{'is-invalid' if invalid}",  placeholder: "Contraseña" %>
+      <%= form.password_field :password,
+                              class: "form-control item #{'is-invalid' if invalid}",
+                              placeholder: "Contraseña",
+                              'data-controller': "form",
+                              'data-action': "input->form#password"
+      %>
 
       <% invalid = @formulario.errors.include?(:password_confirmation) %>
       <% if invalid %>
@@ -48,7 +63,12 @@
           <% end %>
         </div>
       <% end %>
-      <%= form.password_field :password_confirmation, class: "form-control item #{'is-invalid' if invalid}",  placeholder: "Confirma tu contraseña" %>
+      <%= form.password_field :password_confirmation,
+                              class: "form-control item #{'is-invalid' if invalid}",
+                              placeholder: "Confirma tu contraseña",
+                              'data-controller': "form",
+                              'data-action': "input->form#password_confirmation"
+      %>
 
       <%= form.button "Enviar solicitud", class: "btn btn-block create-account" %>
     <% end %>
