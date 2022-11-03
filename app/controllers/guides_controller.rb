@@ -2,7 +2,8 @@
 
 class GuidesController < ApplicationController
   before_action :authenticate_member!
-  def dashboard
-    # Implement
+
+  def dashboard_guide
+    authorize(Post)
   end
 end

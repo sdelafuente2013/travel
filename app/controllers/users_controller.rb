@@ -2,7 +2,8 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_member!
-  def dashboard
-    # Implement
+
+  def dashboard_user
+    authorize(Post)
   end
 end
