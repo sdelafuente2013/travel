@@ -9,9 +9,15 @@
     color: white;
     text-decoration: none;
     margin-right: 9px;
+    border: 1px solid #EBA561;
+    border-radius: 4px;
+    padding: 8px;
     &:hover{
       color: #f0861b ;
     }
+  }
+  .logo{
+    border: transparent;
   }
   #navbarNavAltMarkup{
     justify-content: flex-end;
