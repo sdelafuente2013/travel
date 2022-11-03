@@ -5,4 +5,6 @@ class Member < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  enum role: [:normal, :guia, :admin]
 end

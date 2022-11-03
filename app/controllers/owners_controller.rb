@@ -3,7 +3,7 @@
 class OwnersController < ApplicationController
   before_action :authenticate_member!
 
-  def dashboard
-    # Implement
+  def dashboard_owner
+    authorize(Post)
   end
 end
