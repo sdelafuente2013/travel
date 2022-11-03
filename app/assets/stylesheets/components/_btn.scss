@@ -20,10 +20,14 @@
   display: flex;
   flex-direction: column;
   margin-top: 3%;
-  width: 33%;
+  width: 39%;
   &:hover{
     background-color: #f0861b ;
     border-color: #F4D06F;
     color: white;
   }
+  @media (max-width: 400px) { 
+    width: 65%;
+   }
+
 }
