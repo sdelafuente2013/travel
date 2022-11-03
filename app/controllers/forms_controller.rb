@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class FormsController < ApplicationController
+  before_action :skip_authorization
   def create_form
     @formulario = Contact.new
   end
