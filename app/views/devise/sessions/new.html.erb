@@ -1,16 +1,16 @@
 <%= render 'forms/nabvar' %>
-<div class="container info">
-  <h2 class="text-center">Iniciar sesión</h2>
+<div class="container info login">
    <div class="registration-form">
+    <h2 class="text-center">Iniciar sesión</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "email"%>
       </div>
 
       <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <br />
+        <%= f.password_field :password, autocomplete: "current-password" , placeholder: "contraseña"%>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -21,8 +21,8 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in" ,  class: "btn btn-block create-account" %> <br>
-        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+        <%= f.submit "Iniciar sesión" ,  class: "btn info login" %> <br>
+        <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
       </div>
       <% end %>  
   </div>
