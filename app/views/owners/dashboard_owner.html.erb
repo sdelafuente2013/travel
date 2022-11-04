@@ -1,1 +1,235 @@
-<h1>Bienvenidos Owners</h1>
+<% if policy(Post).dashboard_owner? %>
+  <%= render "layouts/header_owner" %>
+<% else %>
+  <%= render "layouts/header_guest" %>
+<% end %>
+
+<body class="owner">
+<!-- partial:index.partial.html -->
+<div class="app-container">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="app-icon">
+        <img src="https://api.onedrive.com/v1.0/drives/ed2214e74b21771b/items/ED2214E74B21771B!390/thumbnails/0/c1440x688/content?needs_accessToken=true&prefer=noredirect%2Cclosestavailablesize&cb=aRUQyMjE0RTc0QjIxNzcxQiEzOTAuNQ&access_token=EwAoA61DBAAUZUYqEwmYbaXIJECvBbNriwl1aGYAAdFKm%2bK/9nRKTJbARiEsXuI87H23Nt6DmYM8qa59QUl4mFmvP/1M9Ib2nT2HytPTNFNynj8VahXxF4RxbIql2qUz06vSatnjmu39Czcoxa2FAwE%2bsjSAzlcMZdrv7MoEiL1ECzQvxhnHNpn4UuHh8S1LzStOj7Dny5d4gDe4NWrU2x6bqNyM44k/ZKKdYk7bvg8jnPlMvbMm2zv1qPsX6wVhhI2Ai2V0u7Nl5vvkK8arxVTO%2b2Ap3XFDygfq1dORmchlulDxzGha7V5pxqzR1HXJ7S2cxD/Zv%2bgDL6OyMOTlVY5CLJjdDPO%2bAWtrJDfip1h1wRBh/pvIqnFfmUcrpaQDZgAACErtcuRYBxVq%2bAFvvDSvvit1kiqON6hYCUxor7X41dLroSdUyo7cYVYfd%2bJcbMPZjZFsBCMkno70wd3gNy13l4viXEGzdK1KmtPGwBbAWBB3Xi2e1Q0aKmgeIF%2bMmuIFfLkwQOP5A4Aj/G4Jn54rfoHY0IePBq670jIjspgafvsbglnOWJL3nmvHBh3H9MWWVaEZTb24/pN6vc0Z4FSaPP0rh7z3XBFTxbcvGjs/604MZail/9zHKMn0zdOp2LksyxtpZ/vp/3itJFAzrssHx7qy2Uuf3Gezzz6Z1HUey4Z9j32gR7tCTQrCTrrnNeAo4saUOd3d65EZbKtdFLCRcttax44AOxHcnchb%2bwffZmBmNv0ie9iG04p3ZFi/rHce1RkUcmEN8GH8B%2bfmongDSKsjrmNtJKxdvk1POD1dbptubLfvhfetKAGTGwHnLUAu3AU8ZiQNv00x7nwkORDHKblXKHEJ4F2qZ84DVdmWRllgJCkcqKlVXmbVPqWxI8fBXYSkd5LvjKpzckhLR7/RCLW2ecNISkKMxx%2bN2FhnFNO08bAT9JVPCr83a9Vy7YQaHGOzf/EDfwIR2mb4G3HEkexrBi7s3BKX1HFciCanDgVZoF%2bQ1CPhhzm6uEw7zZm3laDbzjlR%2b6NMUPO5ywxYXJnf%2bTYNmjp3wE9LRkBFyZNJoNpGAg%3d%3d" style="width: 70%" alt="">
+      </div>
+    </div>
+    <ul class="sidebar-list">
+      <li class="sidebar-list-item">
+        <a href="#" data-controller="owner" data-action="click->owner#connect">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="sidebar-list-item active">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span>Usuarios</span>
+        </a>
+      </li>
+      <li class="sidebar-list-item">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+          </svg>
+          <span>Estadisticas</span>
+        </a>
+      </li>
+      <li class="sidebar-list-item">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox">
+            <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/>
+            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>
+          </svg>
+          <span>Viajes</span>
+        </a>
+      </li>
+      <li class="sidebar-list-item">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span>Notificaciones</span>
+        </a>
+      </li>
+    </ul>
+    <div class="account-info">
+      <div class="account-info-picture">
+        <img src="https://images.unsplash.com/photo-1527736947477-2790e28f3443?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHx3b21hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="Account">
+      </div>
+      <div class="account-info-name">Monica G.</div>
+      <button class="account-info-more">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+          <circle cx="12" cy="12" r="1"/>
+          <circle cx="19" cy="12" r="1"/>
+          <circle cx="5" cy="12" r="1"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="app-content">
+    <div class="app-content-header">
+      <h1 class="app-content-headerText">Usuarios</h1>
+      <button class="mode-switch active" title="Switch Theme">
+        <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+          <defs></defs>
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
+      <button class="app-content-headerButton">Añadir usuario</button>
+    </div>
+    <div class="app-content-actions">
+      <input class="search-bar" placeholder="Search..." type="text">
+      <div class="app-content-actions-wrapper">
+        <div class="filter-button-wrapper">
+          <button class="action-button filter jsFilter"><span>Filter</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+            </svg>
+          </button>
+          <div class="filter-menu">
+            <label>Category</label>
+            <select>
+              <option>All Categories</option>
+              <option>Furniture</option>
+              <option>Decoration</option>
+              <option>Kitchen</option>
+              <option>Bathroom</option>
+            </select>
+            <label>Status</label>
+            <select>
+              <option>All Status</option>
+              <option>Active</option>
+              <option>Disabled</option>
+            </select>
+            <div class="filter-menu-buttons">
+              <button class="filter-button reset">
+                Reset
+              </button>
+              <button class="filter-button apply">
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="action-button list active" title="List View">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/>
+            <line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+        </button>
+        <button class="action-button grid" title="Grid View">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="products-area-wrapper tableView">
+      <div class="products-header">
+        <div class="product-cell image">
+          Nombre completo
+          <button class="sort-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="product-cell category">Rol
+          <button class="sort-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="product-cell status-cell">Estado
+          <button class="sort-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="product-cell sales">Correo electronico
+          <button class="sort-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="product-cell stock">Viajes ofrecidos:
+          <button class="sort-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="product-cell price">Viajes contratados:
+          <button class="sort-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <% 30.times do %>
+        <div class="products-row">
+          <button class="cell-more-button">
+            <!--            <img src="https://api.onedrive.com/v1.0/drives/ed2214e74b21771b/items/ED2214E74B21771B!401/thumbnails/0/c1440x688/content?needs_accessToken=true&prefer=noredirect%2Cclosestavailablesize&cb=aRUQyMjE0RTc0QjIxNzcxQiE0MDEuNQ&access_token=EwAoA61DBAAUZUYqEwmYbaXIJECvBbNriwl1aGYAAd8MxqVLsUDKt8OLBa2ZeEVUK1YSLQkDFx8qQN4AUtZ8EwLS0xorDtKJ1zum/N%2bpM24r0d6X6IBzlWkQCYbmmJqBVbq6ujSfV/tNkv1C4QhKB8hQxfeUbLqSoswyq5%2byjic3kR9QQU4GQ9/9X%2bJ020cI7weGJDf8wuSZs5Sys81TJzlU1mvwQtm8k0l6/C7nc1Ne901cVxm0PPwF48xAz8ZlRrA5Osum0RuUZzGP6zNfhcyyoY7f0q79YVwPl066BSbx0N78GXAC3DyFi6PQIakokKquopoQzJp3VEKo2jHYtiiujiXzK7R1Nuh3Mz8KpvfELoG9LmnuIUlBq%2bmbBoADZgAACNsMW%2bXIX8Y2%2bAHM7pFmm/IVonwfdSUqRDKJrVwi718rILAqoSg3Pbj3HiiX03/qM9uOuek9WESr0s3tjeRzJ1GEk%2bSmXNuKbJg0YAqQNV7cxO6LRDG8AHWddRouIOKiCH4InaXWFdVUtpbpv2Nn0MDNrS5hspDdgJ4FjhnDchU%2bgtr08J/ZDFVnxLfWS3iUKeYEoBlozigqgOOB19Bfsm/tiq2M9ROL%2b86J9PLbe/%2bZvE%2biDcjTBVlx7nbb5DNYiCyufUnHNdXPWBvWc/OFjUL%2bQ5i1ilndleGwcaihOUZUVyEMia8P4sG/PYq1Dagl1DjYMRw8dCjsD/X82H2jqHMLkq9LM6WROQ1t6BE0z9KSfF5WOJpsBA%2bLshLE5wO39kSkIIinIsmPlvUgYOCRm0Vl3lyA2tL/ScoTMCeKQCVuShEOOshb3Hy7Ja0iGoNlBs2/066Z%2b3cb2vhwRajAwnBpk50h6qHJzDSEdaUPq2tR2zy7iksEHMZXo5BjTLGMCrCi5p10jmG0/reMcocjCI4rvljJlluh8wrLdMBrzDEEEpreV56gPNi83TXsSFWHZ0q45SbiekEbsDflEEU5M%2bkWlgDhRRi68m%2b6neHD3UiCyuDl5g2BpEdKwGibhiI4qiSvIVaex7yhONB6%2bej%2biMR86728I7%2bdkNyIhDwZ5cwQkJdGAg%3d%3d" style="width: 18px; height: 18px">-->
+          </button>
+          <div class="product-cell image">
+            <img src="https://api.onedrive.com/v1.0/drives/ed2214e74b21771b/items/ED2214E74B21771B!401/thumbnails/0/c1440x688/content?needs_accessToken=true&prefer=noredirect%2Cclosestavailablesize&cb=aRUQyMjE0RTc0QjIxNzcxQiE0MDEuNQ&access_token=EwAoA61DBAAUZUYqEwmYbaXIJECvBbNriwl1aGYAAd8MxqVLsUDKt8OLBa2ZeEVUK1YSLQkDFx8qQN4AUtZ8EwLS0xorDtKJ1zum/N%2bpM24r0d6X6IBzlWkQCYbmmJqBVbq6ujSfV/tNkv1C4QhKB8hQxfeUbLqSoswyq5%2byjic3kR9QQU4GQ9/9X%2bJ020cI7weGJDf8wuSZs5Sys81TJzlU1mvwQtm8k0l6/C7nc1Ne901cVxm0PPwF48xAz8ZlRrA5Osum0RuUZzGP6zNfhcyyoY7f0q79YVwPl066BSbx0N78GXAC3DyFi6PQIakokKquopoQzJp3VEKo2jHYtiiujiXzK7R1Nuh3Mz8KpvfELoG9LmnuIUlBq%2bmbBoADZgAACNsMW%2bXIX8Y2%2bAHM7pFmm/IVonwfdSUqRDKJrVwi718rILAqoSg3Pbj3HiiX03/qM9uOuek9WESr0s3tjeRzJ1GEk%2bSmXNuKbJg0YAqQNV7cxO6LRDG8AHWddRouIOKiCH4InaXWFdVUtpbpv2Nn0MDNrS5hspDdgJ4FjhnDchU%2bgtr08J/ZDFVnxLfWS3iUKeYEoBlozigqgOOB19Bfsm/tiq2M9ROL%2b86J9PLbe/%2bZvE%2biDcjTBVlx7nbb5DNYiCyufUnHNdXPWBvWc/OFjUL%2bQ5i1ilndleGwcaihOUZUVyEMia8P4sG/PYq1Dagl1DjYMRw8dCjsD/X82H2jqHMLkq9LM6WROQ1t6BE0z9KSfF5WOJpsBA%2bLshLE5wO39kSkIIinIsmPlvUgYOCRm0Vl3lyA2tL/ScoTMCeKQCVuShEOOshb3Hy7Ja0iGoNlBs2/066Z%2b3cb2vhwRajAwnBpk50h6qHJzDSEdaUPq2tR2zy7iksEHMZXo5BjTLGMCrCi5p10jmG0/reMcocjCI4rvljJlluh8wrLdMBrzDEEEpreV56gPNi83TXsSFWHZ0q45SbiekEbsDflEEU5M%2bkWlgDhRRi68m%2b6neHD3UiCyuDl5g2BpEdKwGibhiI4qiSvIVaex7yhONB6%2bej%2biMR86728I7%2bdkNyIhDwZ5cwQkJdGAg%3d%3d" style="width: 48px; height: 38px">
+            <!--          hacer dinamico Nombre completo-->
+            <span>
+             <%= @user[:names].sample %>
+            </span>
+          </div>
+          <!--          hacer dinamico Rol-->
+          <div class="product-cell category"><span class="cell-label">Rol:</span>
+            <%= @user[:rol].sample %>
+          </div>
+          <div class="product-cell status-cell">
+            <span class="cell-label">Estado:</span>
+            <!--          hacer dinamico Estado-->
+            <button class="status active btn">
+              <%= @user[:status].sample %>
+            </button>
+          </div>
+          <!--            hacer dinamico Correo electronico-->
+          <div class="product-cell sales"><span class="cell-label">Correo electronico:</span>
+            <%= @user[:email].first %>
+          </div>
+          <!--            hacer dinamico Viajes ofrecidos -->
+          <div class="product-cell stock"><span class="cell-label">Viajes ofrecidos:</span>
+            <%= @user[:travel_ofert].sample %>
+          </div>
+          <!--            hacer dinamico Viajes contratados -->
+          <div class="product-cell price"><span class="cell-label">Viajes contratados:</span>
+            <%= @user[:travel_contrac].sample %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</body>
+
+
+<% unless policy(Post).dashboard_owner? %>
+  <%= render "layouts/footer" %>
+<% end %>
