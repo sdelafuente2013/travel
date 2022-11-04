@@ -9,6 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <%= link_to 'Dashboard', owners_dashboard_path, class: "btn-nav" %>
+          <%= button_to "Cerrar sesion", destroy_member_session_path, method: :delete, class: "btn-nav" %>
         </div>
       </div>
     </div>
