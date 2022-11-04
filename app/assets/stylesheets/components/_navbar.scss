@@ -26,4 +26,13 @@
   .navbar-toggler{
     background-color: rgba(255, 255, 255, 0.75);
   }
+  .active{
+    background-color: #f0861b ;
+    border-color: #EBA561;
+    color: white;
+    &:hover{
+      color: #ffffff ;
+      border-color: white;
+    }
+  }
 }
