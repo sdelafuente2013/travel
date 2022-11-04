@@ -8,7 +8,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def dashboard_user?
-    true if @user.role == 'normal'
+    true if @user.role == 'viajero'
   end
 
   def dashboard_guide?

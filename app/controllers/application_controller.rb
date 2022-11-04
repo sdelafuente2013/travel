@@ -3,9 +3,9 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
   def after_sign_in_path_for(resource)
-    return owners_dashboard_path if current_member.role == 'admin'
-    return users_dashboard_path if current_member.role == 'normal'
-    return guides_dashboard_path if current_member.role == 'guia'
+    return owners_dashboard_path if current_or_guest_member.role == 'admin'
+    return users_dashboard_path if current_or_guest_member.role == 'viajero'
+    return guides_dashboard_path if current_or_guest_member.role == 'guia'
   end
 
   # Pundit: allow-list approach
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   skip_after_action :verify_authorized, only: :show, if: -> { params[:controller] == 'high_voltage/pages' }
 
   def pundit_user
-    current_member
+    current_or_guest_member
   end
 
   private

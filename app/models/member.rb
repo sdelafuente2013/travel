@@ -6,5 +6,5 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: [:normal, :guia, :admin]
+  enum role: [:invitado, :viajero, :guia, :admin]
 end
