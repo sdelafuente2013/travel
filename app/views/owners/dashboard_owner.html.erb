@@ -1,17 +1,13 @@
-<% if policy(Post).dashboard_owner? %>
-  <%= render "layouts/header_owner" %>
-<% else %>
-  <%= render "layouts/header_guest" %>
-<% end %>
-
 <body class="owner">
-<!-- partial:index.partial.html -->
 <div class="app-container">
   <div class="sidebar">
     <div class="sidebar-header">
+      <h6 style="font-weight: bold">¡Hola
+      <%= 'Nuria' if current_member.email == 'nuriagutierrezrioperez@gmail.com'%>
+      <%= 'Elana' if current_member.email == 'elenagutierrezrioperez@gmail.com'%>
+      <%= 'Milena' if current_member.email == 'milenajohanna1@gmail.com'%>
+      <%= 'Invitado owner' unless current_member.email == 'milenajohanna1@gmail.com'%>!</h6>
       <div class="app-icon">
-<!--        https://i.ibb.co/DCmc2F1/profile.png-->
-        <img src="https://api.onedrive.com/v1.0/drives/ed2214e74b21771b/items/ED2214E74B21771B!390/thumbnails/0/c1440x787/content?needs_accessToken=true&prefer=noredirect%2Cclosestavailablesize&cb=aODBBMkI0OEI0MjRGMEFGNCExMTIuMw&access_token=EwAoA61DBAAUZUYqEwmYbaXIJECvBbNriwl1aGYAAXtiq5OCTd%2bCVbLVzabGrV3UqjrIUv5GKO36INYcuWf4NmF9g9FxwgZP65Kga325b60jExm1d9lvPTWXR2UT7%2bJiYAA6mIgIAUwkbVyE/8PVtpFHL8VeRadqVLKbIbo1zhCVuCx23nz8sPWEpgNErZyLIjya13l1dN8LFFcrSKEqH46t37iWUU2tuB6iJJVbuNA83CO5HIBReZtRQC/DopIuf9swprUEVX9ukMoi9ekAJc24sckZSp5guw4owrB00HLsS72FRqAyvolnDbWKyDLRNh8s2lwn5o83wfKi6uOwl7wHNqsq%2bTHWp35OWbpm6eBKXz08sjERZDc/HAkdAaADZgAACFM09EEWcySn%2bAEPbq9VmUembKxzUntjY37P03Ljh9RRVyiT7LWu3W2WjGYhvtJEd87P5rV53NgTSbGDnZ9walXMQXY6A22thD8wKjoDUKRChgHJXsDNMehf/FirJZ01cW2NwAEp7lCEqTtryrSz9YaNI1COZ5tQwThKQ8OYhQsL4gqySF2CnBvZPzfdhO1W/ODK/AoUNMFb4hQLLOhdXT30ayLoRuOIXHk8G4RzmFf1j15lDgjhchxyZUf%2bVY5VzxW32fNpVpAM26tp5enKqLmjQrOmLCVDxcvh6dxwc64jaLJFNpTmGQXkXZAVGjLr9ruDY62ufr9QEcP83n4Qfu1dDY0EDv3h8T8w4fvaweSJS7CNJKGA8hGjlCQVHdmp8dH7Yc4SUifWUTnaizk1O7ps23jutqb4gE6oVub%2bQSwbrLz1NxO7JBDEoMVZmsikl0h3KDfCWDiakNSmEL57PIpN5gIPyxHh4k8LAvUVUb3yJddEN2LyrOKdgL0jY0fXUOQUvp9s%2btbhqYxhWefNoSXtXOBJgl6/2MaOV7SyXBVMMopJCNzV9f91esX0YdmYdsAtEw5usfLGtbzsPyP13MP9eXJtGFJ4uqpAVhXQ01JSfadmmXolan3Z7mGA32h5ApH0ytIxWSnt0geDwRPn3kUtEE4w6hB80TNWscDdXEfSBUdGAg%3d%3d" style="width: 70%" alt="">
       </div>
     </div>
     <ul class="sidebar-list">
@@ -79,12 +75,6 @@
   <div class="app-content">
     <div class="app-content-header">
       <h1 class="app-content-headerText">Usuarios</h1>
-      <button class="mode-switch active" title="Switch Theme">
-        <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
-          <defs></defs>
-          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-        </svg>
-      </button>
       <button class="app-content-headerButton">Añadir usuario</button>
     </div>
     <div class="app-content-actions">
@@ -172,7 +162,7 @@
             </svg>
           </button>
         </div>
-        <div class="product-cell stock">Viajes ofrecidos:
+        <div class="product-cell stock">Viajes subidos
           <button class="sort-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
               <path fill="currentColor" d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"/>
@@ -191,10 +181,10 @@
       <% 30.times do %>
         <div class="products-row">
           <button class="cell-more-button">
-            <img src="https://i.ibb.co/DCmc2F1/profile.png" style="width: 18px; height: 18px">
+            <img src="https://i.ibb.co/DCmc2F1/profile.png" alt="" style="width: 18px; height: 18px">
           </button>
           <div class="product-cell image">
-            <img src="https://i.ibb.co/DCmc2F1/profile.png" style="width: 48px; height: 38px">
+            <img src="https://i.ibb.co/DCmc2F1/profile.png" style="width: 48px; height: 38px" alt="">
             <!--          hacer dinamico Nombre completo-->
             <span>
              <%= @user[:names].sample %>
@@ -216,11 +206,11 @@
             <%= @user[:email].first %>
           </div>
           <!--            hacer dinamico Viajes ofrecidos -->
-          <div class="product-cell stock"><span class="cell-label">Viajes ofrecidos:</span>
+          <div class="product-cell stock"><span class="cell-label">Viajes subidos:</span>
             <%= @user[:travel_ofert].sample %>
           </div>
           <!--            hacer dinamico Viajes contratados -->
-          <div class="product-cell price"><span class="cell-label">Viajes contratados:</span>
+          <div class="product-cell price"><span class="cell-label">Viajes inscriptos:</span>
             <%= @user[:travel_contrac].sample %>
           </div>
         </div>
@@ -229,8 +219,3 @@
   </div>
 </div>
 </body>
-
-
-<% unless policy(Post).dashboard_owner? %>
-  <%= render "layouts/footer" %>
-<% end %>

@@ -12,21 +12,20 @@
 </head>
 
 <body>
-<%# flash.each do |name, msg| %>
-<!--  <div class='container-fluid' style='padding-right: 35px; padding-left: 35px'>-->
-<!--    <br/>-->
-    <%#= content_tag :div, msg, :id => "flash_#{name}",  :class => "alert alert-#{'danger' if alert}" %>
-<!--  </div>-->
-<%# end %>
-
-<% if policy(Post).dashboard_owner? %>
-  <%= render "layouts/header_owner" %>
-<% else %>
-  <%= render "layouts/header_guest" %>
+<% flash.each do |name, msg| %>
+  <div class='container-fluid' style='padding-right: 35px; padding-left: 35px'>
+    <br/><br/><br/>
+    <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert alert-#{'danger' if alert}#{'success' unless alert}" %>
+  </div>
 <% end %>
+
+<%= render "layouts/header" %>
 
 <%= yield %>
 
-<%#= render "layouts/footer" %>
+<% unless policy(Post).dashboard_owner? %>
+  <%= render "layouts/footer" %>
+<% end %>
+
 </body>
 </html>

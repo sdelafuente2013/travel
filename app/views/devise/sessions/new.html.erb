@@ -1,31 +1,29 @@
-<%= render 'forms/nabvar' %>
+<%= render 'forms/header' %>
 <div class="container info login">
-   <div class="registration-form">
+  <div class="registration-form">
     <h2 class="text-center">Iniciar sesión</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-icon"><span> <em class="fa-solid fa-user"></em> </span></div>
+      <div class="form-icon"><span> <em class="fa-solid fa-user"></em> </span></div>
       <div class="field">
-        <br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "email"%>
+        <br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Ingrese su correo" %>
       </div>
 
       <div class="field">
-        <br />
-        <%= f.password_field :password, autocomplete: "current-password" , placeholder: "contraseña"%>
+        <br/>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Ingrese su contraseña" %>
       </div>
-
-   
 
       <div class="actions">
         <% if devise_mapping.rememberable? %>
           <div class="field">
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :remember_me, "Recuerdame" %>
           </div>
         <% end %>
-        <%= f.submit "Iniciar sesión" ,  class: "btn info login" %> <br>
-        <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+        <%= f.submit "Iniciar sesión", class: "btn info login" %> <br>
+        <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br/>
       </div>
-      <% end %>  
+    <% end %>
   </div>
 </div>
