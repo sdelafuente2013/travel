@@ -18,4 +18,12 @@ class PostPolicy < ApplicationPolicy
   def dashboard_owner?
     true if @user.role == 'admin'
   end
+
+  def new_user?
+    true if @user.role == 'admin'
+  end
+
+  def create_user?
+    true if @user.role == 'admin'
+  end
 end

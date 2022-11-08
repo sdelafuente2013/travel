@@ -11,6 +11,15 @@ class FormsFutureGuideMailer < ApplicationMailer
          template_path: 'mailer_future_guides',
          template_name: 'send_mail_future_guide'
   end
+  def send_mail_invitation_guide(object)
+    @email = object.email
+    @password = object.password
+
+    mail to: @email,
+         subject: '¡Te damos la bienvenida a My Digital Tour',
+         template_path: 'mailer_future_guides',
+         template_name: 'send_mail_invitation_guide'
+  end
 
   def send_mail_santiago(object)
     @full_name = object.name

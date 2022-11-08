@@ -2,7 +2,7 @@
 <div class="app-container">
   <div class="sidebar">
     <div class="sidebar-header">
-      <h6 style="font-weight: bold">¡Hola
+      <h6 style="font-weight: bold">¡Hola</h6>
       <%= 'Nuria' if current_member.email == 'nuriagutierrezrioperez@gmail.com'%>
       <%= 'Elana' if current_member.email == 'elenagutierrezrioperez@gmail.com'%>
       <%= 'Milena' if current_member.email == 'milenajohanna1@gmail.com'%>!
@@ -56,6 +56,8 @@
           <span>Notificaciones</span>
         </a>
       </li>
+      <%= link_to 'Agregar guía', owners_dashboard_new_path, class: "btn fbtn-primary" %>
+
     </ul>
     <div class="account-info">
       <div class="account-info-picture">
@@ -74,7 +76,6 @@
   <div class="app-content">
     <div class="app-content-header">
       <h1 class="app-content-headerText">Usuarios</h1>
-      <button class="app-content-headerButton">Añadir usuario</button>
     </div>
     <div class="app-content-actions">
       <input class="search-bar" placeholder="Search..." type="text">

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="registration-form">
+    <%= form_with model: @member, url: create_user_owner_path, data: { turbo: false } do |form| %>
+      <div class="form-icon"><span> <em class="fa-solid fa-user"></em> </span></div>
+
+      <%= sanitize(exist_error?(:email, @member)) %>
+      <%= form.email_field :email,
+                           class: "form-control item",
+                           placeholder: "Email del guía",
+                           'data-controller': "form",
+                           'data-action': "input->form#email"
+      %>
+
+      <%= form.button "Añadir", class: "btn info" %>
+    <% end %>
+  </div>
+</div>

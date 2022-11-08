@@ -27,3 +27,7 @@ es:
               blank: 'es un campo requerido'
               too_short: 'debe tener como minimo 6 caracteres'
               confirmation: 'deben ser iguales'
+        member:
+          attributes:
+            email:
+              blank: 'es un campo requerido'

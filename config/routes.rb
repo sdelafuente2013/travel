@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'owners/dashboard', to: 'owners#dashboard_owner'
   get 'users/dashboard', to: 'users#dashboard_user'
 
+  get 'owners/dashboard/new', to: 'owners#new_user'
+  post 'owners/dashboard/new', to: 'owners#create_user', as: 'create_user_owner'
+
   devise_for :members, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',

@@ -10,14 +10,14 @@
       <%= form_with model: @formulario, url: form_create_path do |form| %>
         <div class="form-icon"><span> <em class="fa-solid fa-user"></em> </span></div>
 
-        <%= sanitize(validationa(:name, @formulario)) %>
+        <%= sanitize(exist_error?(:name, @formulario)) %>
         <%= form.text_field :name,
                             class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}",
                             placeholder: "Nombre completo",
                             'data-controller': "form",
                             'data-action': "input->form#name" %>
 
-        <%= sanitize(validationa(:email, @formulario)) %>
+        <%= sanitize(exist_error?(:email, @formulario)) %>
         <%= form.email_field :email,
                              class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}}",
                              placeholder: "Su email",
@@ -25,7 +25,7 @@
                              'data-action': "input->form#email"
         %>
 
-        <%= sanitize(validationa(:password, @formulario)) %>
+        <%= sanitize(exist_error?(:password, @formulario)) %>
         <%= form.password_field :password,
                                 class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}}",
                                 placeholder: "Contraseña",
@@ -33,7 +33,7 @@
                                 'data-action': "input->form#password"
         %>
 
-        <%= sanitize(validationa(:password_confirmation, @formulario)) %>
+        <%= sanitize(exist_error?(:password_confirmation, @formulario)) %>
         <%= form.password_field :password_confirmation,
                                 class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}}",
                                 placeholder: "Confirma tu contraseña",
