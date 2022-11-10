@@ -2,10 +2,7 @@
 <div class="app-container">
   <div class="sidebar">
     <div class="sidebar-header">
-      <h6 style="font-weight: bold">¡Hola</h6>
-      <%= 'Nuria' if current_member.email == 'nuriagutierrezrioperez@gmail.com'%>
-      <%= 'Elana' if current_member.email == 'elenagutierrezrioperez@gmail.com'%>
-      <%= 'Milena' if current_member.email == 'milenajohanna1@gmail.com'%>!
+      <h6 style="font-weight: bold">¡Hola <%= current_member.name %>!</h6>
       <div class="app-icon">
       </div>
     </div>
@@ -178,40 +175,35 @@
         </div>
       </div>
 
-      <% 30.times do %>
+      <% @members.each do |member|  %>
         <div class="products-row">
-          <button class="cell-more-button">
-            <img src="https://i.ibb.co/DCmc2F1/profile.png" alt="" style="width: 18px; height: 18px">
-          </button>
           <div class="product-cell image">
             <img src="https://i.ibb.co/DCmc2F1/profile.png" style="width: 48px; height: 38px" alt="">
-            <!--          hacer dinamico Nombre completo-->
+            <!-- Name -->
             <span>
-             <%= @user[:names].sample %>
+             <%= member.name.nil? ? 'No definido' : member.name %>
             </span>
           </div>
-          <!--          hacer dinamico Rol-->
-          <div class="product-cell category"><span class="cell-label">Rol:</span>
-            <%= @user[:rol].sample %>
+          <!-- Role -->
+          <div class="product-cell category">
+            <%= member.role.nil? ? 'No definido' : member.role %>
           </div>
           <div class="product-cell status-cell">
-            <span class="cell-label">Estado:</span>
-            <!--          hacer dinamico Estado-->
-            <button class="status active btn">
-              <%= @user[:status].sample %>
-            </button>
+            <!--Active-->
+              <%= (member.active == true) ? 'Activo' : 'Desactivado' %>
           </div>
-          <!--            hacer dinamico Correo electronico-->
-          <div class="product-cell sales"><span class="cell-label">Correo electronico:</span>
-            <%= @user[:email].first %>
+          <!-- email -->
+          <div class="product-cell sales">
+<!--            algo@algo.com-->
+            <%=  member.email  %>
           </div>
-          <!--            hacer dinamico Viajes ofrecidos -->
-          <div class="product-cell stock"><span class="cell-label">Viajes subidos:</span>
-            <%= @user[:travel_ofert].sample %>
+          <!-- Viajes subidos -->
+          <div class="product-cell stock">
+            <%= member.travel_updates %> 0
           </div>
-          <!--            hacer dinamico Viajes contratados -->
-          <div class="product-cell price"><span class="cell-label">Viajes inscriptos:</span>
-            <%= @user[:travel_contrac].sample %>
+          <!-- Viajes inscriptos -->
+          <div class="product-cell price">
+            <%= member.travel_contract %> 0
           </div>
         </div>
       <% end %>

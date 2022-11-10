@@ -102,6 +102,8 @@ GEM
     diff-lcs (1.5.0)
     erubi (1.11.0)
     execjs (2.8.1)
+    faker (2.23.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -292,6 +294,7 @@ DEPENDENCIES
   debug
   devise (~> 4.8, >= 4.8.1)
   devise-guests (~> 0.8.1)
+  faker (~> 2.23)
   high_voltage
   importmap-rails
   jbuilder
