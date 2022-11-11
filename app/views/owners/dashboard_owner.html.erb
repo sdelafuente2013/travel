@@ -190,7 +190,9 @@
           </div>
           <div class="product-cell status-cell">
             <!--Active-->
+            <button class="status active btn" >
               <%= (member.active == true) ? 'Activo' : 'Desactivado' %>
+            </button>
           </div>
           <!-- email -->
           <div class="product-cell sales">
@@ -199,11 +201,11 @@
           </div>
           <!-- Viajes subidos -->
           <div class="product-cell stock">
-            <%= member.travel_updates %> 0
+            <%= member.travel_updates %>
           </div>
           <!-- Viajes inscriptos -->
           <div class="product-cell price">
-            <%= member.travel_contract %> 0
+            <%= member.travel_contract %>
           </div>
         </div>
       <% end %>

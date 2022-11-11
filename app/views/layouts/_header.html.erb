@@ -11,6 +11,9 @@
           <% if policy(Post).dashboard_owner? %>
             <%= link_to 'Dashboard', owners_dashboard_path, class: "btn-nav" %>
             <%= link_to "Cerrar sesion", destroy_member_session_path, data: { turbo_method: :delete, turbo_confirm: "¿Cerrar sesión?" }, class: "btn-nav active" %>
+          <% elsif policy(Post).dashboard_guide? %>
+            <%= link_to 'Dashboard', guides_dashboard_path, class: "btn-nav" %>
+            <%= link_to "Cerrar sesion", destroy_member_session_path, data: { turbo_method: :delete, turbo_confirm: "¿Cerrar sesión?" }, class: "btn-nav active" %>
           <% else %>
             <%= link_to 'Ingresar', new_member_session_path, class: "btn-nav" %>
             <%= link_to 'Registrarme como guía', page_path('info'), class: "btn-nav active" %>

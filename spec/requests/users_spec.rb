@@ -17,7 +17,7 @@ RSpec.describe UsersController, type: :controller do
     context 'when #index is accessed' do
       before { get :index }
 
-      it 'should render the index.html view' do
+      it 'should render the dashboard_guide.html.erb view' do
         should render_template('index')
       end
     end
