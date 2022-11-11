@@ -344,3 +344,18 @@
 .content-wrap .person-boxes .person-box .box-actions button:hover svg circle {
   fill: #2b3a60;
 }
+
+.travels{
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+
+  .card{
+    margin: 10px;
+
+    .red{
+      background-color: red;
+    }
+  }
+}
+
