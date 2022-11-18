@@ -1,0 +1,48 @@
+<div class="tour">
+  <h4>Crea un Digital Tour</h4>
+  <div class="container">
+    <div class="registration-form">
+      <%= form_with model: @tour, url: create_tour_post_path do |form| %>
+
+        <%#= sanitize(exist_error?(:name, @formulario)) %>
+        <%= form.text_field :title,
+                            # class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}",
+                            placeholder: "Nombre del digital tour"
+                            # 'data-controller': "form",
+                            # 'data-action': "input->form#name"
+        %>
+
+        <%#= sanitize(exist_error?(:email, @formulario)) %>
+        <%= form.text_field :country,
+                             # class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}}",
+                             placeholder: "Pais"
+                             # 'data-controller': "form",
+                             # 'data-action': "input->form#email"
+        %>
+
+        <%= form.text_field :city,
+                             # class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}}",
+                             placeholder: "Ciudad"
+                             # 'data-controller': "form",
+                             # 'data-action': "input->form#email"
+        %>
+
+        <%= form.text_field :type_activity,
+                             # class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}}",
+                             placeholder: "Tipo de actividad"
+                             # 'data-controller': "form",
+                             # 'data-action': "input->form#email"
+        %>
+
+        <%= form.text_field :price,
+                             # class: "form-control item #{'is-invalid' if @formulario.errors.include?(:name)}}",
+                             placeholder: "Su email"
+                             # 'data-controller': "form",
+                             # 'data-action': "input->form#email"
+        %>
+
+        <%= form.button "Crear Tour Digital", class: "btn info" %>
+      <% end %>
+    </div>
+  </div>
+</div>

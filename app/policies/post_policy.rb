@@ -26,4 +26,12 @@ class PostPolicy < ApplicationPolicy
   def create_user?
     true if @user.role == 'admin'
   end
+
+  def new_tour_guide?
+    true if @user.role == 'guia'
+  end
+
+  def create_tour_guide?
+    true if @user.role == 'guia'
+  end
 end

@@ -13,14 +13,13 @@
 </head>
 
 <body>
+<%= render "layouts/header" unless params[:action] == "create_form"%>
+
 <% flash.each do |name, msg| %>
   <div class='container-fluid' style='padding-right: 35px; padding-left: 35px'>
-    <br/><br/><br/>
     <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert alert-#{'danger' if alert}#{'success' unless alert}" %>
   </div>
 <% end %>
-
-<%= render "layouts/header" %>
 
 <%= yield %>
 
